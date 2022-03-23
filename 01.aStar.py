@@ -1,3 +1,4 @@
+print("begin")
 def aStarAlgo(start_node, stop_node):
     open_set = set(start_node)
     closed_set = set()
@@ -27,8 +28,8 @@ def aStarAlgo(start_node, stop_node):
                         closed_set.remove(m)
                         open_set.add(m)
         if n == None:
-             print('Path does not exist!')
-             return None
+            print('Path does not exist!')
+            return None
         if n == stop_node:
             path = []
             while parents[n] != n:
@@ -38,12 +39,13 @@ def aStarAlgo(start_node, stop_node):
             path.reverse()
             print('Path found: {}'.format(path))
             return path
-        open_set.remove(n)
-        closed_set.add(n)
-        print('Path does not exist!')
-        return None
-def get_neighbors(v):
- if v in Graph_nodes:
-    return Graph_nodes[v]
- else:
+    open_set.remove(n)
+    closed_set.add(n)
+    print('Path does not exist!')
     return None
+def get_neighbors(v):
+    if v in Graph_nodes:
+        return Graph_nodes[v]
+    else:
+        return None
+print('end')
